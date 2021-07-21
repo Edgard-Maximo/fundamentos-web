@@ -21,21 +21,21 @@
     
     <div class="container mb-50">
         <div>
-        <form>
-            <label for="nome">Nome:</label> <br>
-            <input type="text" id="nome">
-            <br>
-            <br>
-            <label for="email">E-mail:</label> <br>
-            <input type="email" id="email">
-            <br>
-            <br>
-            <label for="assunto">Assunto:</label> <br>
-            <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
-            <br>
-            <br>
-            <button>Enviar</button>
-        </form>
+            <form>
+                <label for="nome">Nome:</label> <br>
+                <input type="text" id="nome" onkeyup='validaNome()'>
+                <div id='txtNome'></div>
+                <br>
+                <label for="email">E-mail:</label> <br>
+                <input type="email" id="email" onkeyup='validaEmail()'>
+                <div id='txtEmail'></div>
+                <br>
+                <label for="assunto">Assunto:</label> <br>
+                <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+                <div id='txtAssunto'></div>
+                <br>
+                <button onclick="enviar()">Enviar</button>
+            </form>
         </div>
     
         <div class="ml-50">
@@ -43,13 +43,16 @@
         <p>Av. Dr.Altino Arantes, 1257</p>
         <p>São Paulo - SP</p>
         
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0444021629933!2d-46.65138578538282!3d-23.602740469005973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a3d04cb87bd%3A0xcc72b983a7d0aa67!2sAv.%20Dr.%20Altino%20Arantes%2C%201257%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004042-035!5e0!3m2!1spt-BR!2sbr!4v1626792725731!5m2!1spt-BR!2sbr"
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.
+        0444021629933!2d-46.65138578538282!3d-23.602740469005973!2m3!1f0!2f0!3f0!3m
+        2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a3d04cb87bd%3A0xcc72b983a7d0aa67!2sAv.
+        %20Dr.%20Altino%20Arantes%2C%201257%20-%20Vila%20Clementino%2C%20S%C3%A3o%20Paulo
+        %20-%20SP%2C%2004042-035!5e0!3m2!1spt-BR!2sbr!4v1626792725731!5m2!1spt-BR!2sbr"
         width="450" 
         height="250" 
         style="border: 35px;;" 
         allowfullscreen="" 
-        loading="lazy"
-        ></iframe>
+        loading="lazy" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id='mapa'></iframe>
         </div>
     </div>
     
@@ -74,6 +77,9 @@
         <p class="center">
         Todos os direitos reservados: Edgard Maximo &copy
         </p> 
-    /footer>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
 </body>
 </html>
